@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imposter-game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+</head>
+<body>
+
+   <audio id="bgMusic" src="background.mp3" loop autoplay></audio>
+
+
+<script>
+  function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4;        // Lautstärke (0 = leise, 1 = laut)
+    music.play();
+
+  
+  }
+    const music = document.getElementById("bgMusic");
+  music.volume = 0.4;
+
+  function tryPlayMusicOnce() {
+    music.play().catch(err => console.log("Autoplay blockiert:", err));
+    document.removeEventListener("click", tryPlayMusicOnce);
+  }
+
+  document.addEventListener("click", tryPlayMusicOnce);
+</script>
+ 
+
+    <div class="container">
+        <h1>Lie or Die</h1>
+        
+
+        <button>
+            Button
+        </button>
+    </div>
+
+    <div class="sidebar">
+        <h2>Party</h2>
+        <div class="player-slot"></div>
+        <div class="player-slot"></div>
+        <div class="player-slot"></div>
+        <div class="player-slot"></div>
+        <div class="player-slot"></div>
+        <div class="player-slot"></div>
+        <button class="leave-button">Leave</button>  
+      </div>
+
+</body>
+</html>
